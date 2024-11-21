@@ -13,6 +13,7 @@ import scipy.stats as st
 
 
 def PoissonGen1(mu):
+    # draws a random value from a Poisson distribution
     k=-1
     s = 1
     q = np.exp(-mu)
@@ -23,6 +24,7 @@ def PoissonGen1(mu):
     return k
 
 def BinomialGen1(n, p):
+    # draws a random value from a Poisson distribution
     m = 0
     for i in range(n):
         r = np.random.rand()
@@ -30,11 +32,10 @@ def BinomialGen1(n, p):
             m = m+1
     return m
 
-iterations = 10
-
-# BINOMIAL DISTRIBUTION
+iterations = 1000
 
 
+# EXAMPLE OF SAMPLING FROM BINOMIAL DISTRIBUTION
 binomial_seq = np.zeros(iterations)
 n = iterations
 p = .2
@@ -53,8 +54,10 @@ plt.title(f'n iterations: {iterations}, p: {p}')
 plt.savefig('binomial_dist.png')
 print("Salvato plot binomial_dist.png\n")
 
-# POISSON DISTRIBUTION 
 
+
+
+# EXAMPLE OF SAMPLING FROM POISSON DISTRIBUTION
 
 poisson_seq = np.zeros(iterations)
 mu = .9
