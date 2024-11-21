@@ -3,8 +3,8 @@
 Created on Tue Jun 23 12:17:18 2020
 sampling from distributions
 
-slide sioli lezione 3 (PRNG) pag 27
-@author: aless
+prof. sioli lezione 3 (PRNG) pag 27
+@author: Alessio Giuseppe Ferraioli
 """
 import numpy as np
 import matplotlib.pyplot as plt
