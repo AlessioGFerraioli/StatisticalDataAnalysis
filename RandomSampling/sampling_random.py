@@ -38,20 +38,23 @@ iterations = 1000
 # EXAMPLE OF SAMPLING FROM BINOMIAL DISTRIBUTION
 binomial_seq = np.zeros(iterations)
 n = iterations
-p = .2
+p = .2 # parameter for the Binomial distribution
 
+# generate a sequence of random values from the Binomial distribution
 for i in range(iterations):
     binomial_seq[i]=BinomialGen1(n, p)
+
+# plot the generated values and compare it to the "real" Binomial distribution
 fig, ax = plt.subplots(1, 1)
 values = np.arange(iterations)
 pmf = st.binom(n, p).pmf(values)
-ax.bar(values, pmf, alpha=0.5)
+ax.bar(values, pmf*iterations*10, alpha=0.2)
 
    
-plt.hist(binomial_seq, color='g',alpha=0.5)
+plt.hist(binomial_seq, color='g',alpha=0.3)
 plt.suptitle('Random Sampling from Binomial Distribution')
 plt.title(f'n iterations: {iterations}, p: {p}')
-plt.savefig('binomial_dist.png')
+plt.savefig('RandomSampling/binomial_dist.png')
 print("Salvato plot binomial_dist.png\n")
 
 
@@ -59,19 +62,20 @@ print("Salvato plot binomial_dist.png\n")
 
 # EXAMPLE OF SAMPLING FROM POISSON DISTRIBUTION
 
+
 poisson_seq = np.zeros(iterations)
-mu = .9
+mu = .9 # parameter for the Poisson distribution
+# generate a sequence of random values from the Poisson distribution
 for i in range(iterations):
     poisson_seq[i]=PoissonGen1(mu)
-
 
 fig, ax = plt.subplots(1, 1)
 values = np.arange(20)
 pmf = st.poisson(mu).pmf(values)
-ax.bar(values, pmf, alpha=0.5)
+ax.bar(values, pmf*iterations, alpha=0.3)
  
-plt.hist(poisson_seq, color='g', alpha=0.5)
+ax.hist(poisson_seq, color='g', alpha=0.3)
 plt.suptitle('Random Sampling from Poisson Distribution')
 plt.title(f'n iterations: {iterations}, mu: {mu}')
-plt.savefig('poisson_dist.png')
+fig.savefig('RandomSampling/poisson_dist.png')
 print("Salvato plot poisson_dist.png\n")
