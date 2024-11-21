@@ -2,7 +2,7 @@
 """
 Created on Mon Jun 22 15:41:04 2020
 
-@author: aless
+@author: Alessio Giuseppe Ferraioli
 """
 
 import numpy as np 
